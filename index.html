@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerador de senhas JS</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/scripts.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Teste</h1>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="register-container">
+      <div id="register-banner">
+        <div id="banner-layer">
+          <h1>Seja bem-vindo</h1>
+        </div>
+      </div>
+      <div id="register-form">
+        <h2>Crie sua conta:</h2>
+        <p>Registre-se para utilizar todas as funcionalidades do sistema</p>
+        <div class="form-control">
+          <label for="name">Nome</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Digite seu nome"
+          />
+        </div>
+        <div class="form-control">
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Digite seu email"
+          />
+        </div>
+        <div class="form-control">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            name="senha"
+            id="senha"
+            placeholder="Digite seu senha"
+          />
+        </div>
+        <p>
+            Quer ajuda para criar uma senha segura? <span id="gerar-senha">Clique a</span>
+        </p>
+        <div id="gerando-senha">
+            <p>Aqui está sua senha:</p>
+            <h4></h4>
+        </div>
+        <div class="form-control">
+          <label for="conf-senha">Confirme a senha</label>
+          <input
+            type="password"
+            name="conf-senha"
+            id="conf-senha"
+            placeholder="confirme a sua senha"
+          />
+        </div>
+        <input type="submit" value="Cadastrar"/>
+      </div>
+    </div>
+  </body>
 </html>
