@@ -5,7 +5,7 @@ const senhaGerada = document.querySelector("#gerando-senha");
 const openGeratorBtn = document.querySelector("#gerar-senha");
 const containerPassword = document.querySelector("#options-generate");
 const lengthInput = document.querySelector("#length");
-const numberInput = document.querySelector("#number");
+const numberInput = document.querySelector("#numeros");
 const lettersInput = document.querySelector("#letras");
 const simbolosInput = document.querySelector("#simbolo");
 const copyBtn = document.querySelector("#copy-password");
@@ -36,9 +36,25 @@ const gerarSenha = (
 ) => {
   let senha = "";
 
-  const tamnahoSenha = 10;
+  const tamnahoSenha = +lengthInput.value;
 
-  const geracao = [getLetraMinuscula, getLetraMaiuscula, getNumero, getSimbolo];
+  const geracao = [];
+
+  if (lettersInput.checked) {
+    geracao.push(getLetraMaiuscula, getLetraMinuscula);
+  }
+
+  if (numberInput.checked) {
+    geracao.push(getNumero);
+  }
+
+  if (simbolosInput.checked) {
+    geracao.push(getSimbolo);
+  }
+
+  if (geracao.length === 0) {
+    return;
+  }
 
   for (i = 0; i < tamnahoSenha; i = i + geracao.length) {
     geracao.forEach(() => {
@@ -50,6 +66,10 @@ const gerarSenha = (
   senha = senha.slice(0, tamnahoSenha);
   senhaGerada.style.display = "block";
   senhaGerada.querySelector("h4").innerText = senha;
+
+  if (tamnahoSenha <= 0) {
+    return;
+  }
 };
 // eventos
 gerarSenhaBtn.addEventListener("click", () => {
@@ -58,4 +78,17 @@ gerarSenhaBtn.addEventListener("click", () => {
 
 openGeratorBtn.addEventListener("click", () => {
   containerPassword.classList.toggle("hide");
+});
+
+copyBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const password = document.querySelector("h4").innerText;
+  navigator.clipboard.writeText(password).then(() => {
+    copyBtn.innerText = "Senha copiada com sucesso";
+
+    setTimeout(()=>{
+      copyBtn.innerText = "Copiar";
+    }, 1000)
+  });
 });

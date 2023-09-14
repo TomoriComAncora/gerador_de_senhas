@@ -69,7 +69,7 @@ input:focus {
   text-align: center;
   font-size: 0.8rem;
   color: #aaa;
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
 }
 .form-control {
   display: flex;
