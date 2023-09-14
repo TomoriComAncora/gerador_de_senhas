@@ -1,6 +1,14 @@
 // seleção de elementos
-const gerarSenhaBtn = document.querySelector("#gerar-senha");
+const gerarSenhaBtn = document.querySelector("#generate-password");
 const senhaGerada = document.querySelector("#gerando-senha");
+
+const openGeratorBtn = document.querySelector("#gerar-senha");
+const containerPassword = document.querySelector("#options-generate");
+const lengthInput = document.querySelector("#length");
+const numberInput = document.querySelector("#number");
+const lettersInput = document.querySelector("#letras");
+const simbolosInput = document.querySelector("#simbolo");
+const copyBtn = document.querySelector("#copy-password");
 
 // funções
 const getLetraMinuscula = () => {
@@ -39,11 +47,15 @@ const gerarSenha = (
       senha += randomValue;
     });
   }
-  senha = senha.slice(0, tamnahoSenha)
+  senha = senha.slice(0, tamnahoSenha);
   senhaGerada.style.display = "block";
   senhaGerada.querySelector("h4").innerText = senha;
 };
 // eventos
 gerarSenhaBtn.addEventListener("click", () => {
   gerarSenha(getLetraMinuscula, getLetraMaiuscula, getNumero, getSimbolo);
+});
+
+openGeratorBtn.addEventListener("click", () => {
+  containerPassword.classList.toggle("hide");
 });

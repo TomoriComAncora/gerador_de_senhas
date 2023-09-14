@@ -115,7 +115,9 @@ input:focus {
   color: #38a3a5;
 }
 
-#register-form input[type="submit"] {
+#register-form input[type="submit"],
+#copy-password, 
+#generate-password{
   background-color: #38a3a5;
   color: #f8f8f8;
   padding: 1rem 1.4rem;
@@ -130,4 +132,43 @@ input:focus {
 
 #register-form input[type="submit"]:hover {
   opacity: 1;
+}
+
+#options-generate{
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#options-generate .form-control{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#options-generate label{
+  font-size: .8rem;
+}
+
+#options-generate input[type="text"]{
+  max-width: 30px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+#options-generate button{
+  background-color: #e63946;
+  display: block;
+  margin: 0 auto;
+}
+
+#copy-password{
+  background-color: transparent;
+  border: 1px solid #38a3a5;
+  color: #38a3a5;
+  padding: .5rem .8rem;
+}
+
+.hide{
+  display: none;
 }
